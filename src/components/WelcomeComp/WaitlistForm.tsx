@@ -82,7 +82,7 @@ export default function WaitlistForm() {
               <input
                 type="text"
                 placeholder="Enter your first name"
-                className="w-full p-3 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                className="waitlist-input"
                 value={FirstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
@@ -90,21 +90,20 @@ export default function WaitlistForm() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full p-3 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                className="waitlist-input"
                 value={WaitlistEmail}
                 onChange={(e) => setWaitlistEmail(e.target.value)}
               />
             </div>
 
             {error && (
-              <p className="text-sm text-red-600 text-center">
+              <p className="form-error text-center">
                 {error}
               </p>
             )}
 
             <button
-              style={{ fontFamily: "Michaela-Grace" }}
-              className="waitlist-submit-button text-3xl py-2 px-10 rounded-md focus:outline-none disabled:opacity-60"
+              className="waitlist-submit-button disabled:opacity-60"
               type="submit"
               disabled={loading}
             >
@@ -122,7 +121,7 @@ export default function WaitlistForm() {
                 onChange={(e) => setAcceptedTerms(e.target.checked)}
               />
 
-              <label htmlFor="AcceptTerms" className="text-xs text-gray-700 leading-relaxed">
+              <label htmlFor="AcceptTerms" className="text-xs leading-relaxed" style={{ color: "#3f4b63" }}>
                 I consent to receive consulting services by email for information about the material and services offered by JurisSuite. I understand that I can unsubscribe at any time.
               </label>
             </div>

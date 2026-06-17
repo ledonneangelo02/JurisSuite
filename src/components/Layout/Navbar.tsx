@@ -37,8 +37,7 @@ export default function Navbar() {
       </div>
 
       <button
-        style={{ fontFamily: "Michaela-Grace" }}
-        className="nav-button text-3xl leading-none rounded-md focus:outline-none"
+        className="nav-button focus:outline-none"
         onClick={scrollToWaitlist}
       >
         Join Waitlist

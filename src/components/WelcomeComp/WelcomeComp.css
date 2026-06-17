@@ -270,14 +270,44 @@
   box-shadow: 0 20px 32px var(--button-secondary-shadow);
 }
 
+.waitlist-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(20, 33, 61, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #14213d;
+  font-size: 0.98rem;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.waitlist-input::placeholder {
+  color: #6d7483;
+}
+
+.waitlist-input:focus {
+  border-color: rgba(20, 33, 61, 0.3);
+  box-shadow: 0 0 0 3px var(--button-focus-ring);
+}
+
 .waitlist-submit-button {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2.5rem;
+  border-radius: 999px;
+  font-family: "Michaela-Grace", serif;
+  font-size: 1.65rem;
+  line-height: 1;
   color: var(--button-primary-text);
   background: var(--button-primary-bg);
   border: 1px solid var(--button-primary-border);
   box-shadow: 0 14px 28px var(--button-primary-shadow);
+  cursor: pointer;
   transition: background 180ms ease, box-shadow 180ms ease;
 }
 
@@ -380,56 +410,6 @@
 .waitlist-form-container > :not(.thumb-tack) {
   position: relative;
   z-index: 2;
-}
-
-.thumb-tack {
-  position: absolute;
-  z-index: 3;
-  width: 1.35rem;
-  height: 1.35rem;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.92), transparent 0.28rem),
-    radial-gradient(circle at 52% 58%, #d7dce7 0 0.22rem, transparent 0.24rem),
-    linear-gradient(145deg, #f6f8fb, #8f9aae);
-  border: 1px solid rgba(62, 72, 91, 0.34);
-  box-shadow:
-    0 0.45rem 0.85rem rgba(20, 33, 61, 0.22),
-    inset 0 0.12rem 0.18rem rgba(255, 255, 255, 0.82),
-    inset 0 -0.18rem 0.28rem rgba(62, 72, 91, 0.28);
-}
-
-.thumb-tack::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -0.42rem;
-  width: 0.18rem;
-  height: 0.55rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #69748a, #2f394d);
-  transform: translateX(-50%);
-  box-shadow: 0 0.2rem 0.3rem rgba(20, 33, 61, 0.2);
-}
-
-.thumb-tack-top-left {
-  top: 1rem;
-  left: 1.15rem;
-}
-
-.thumb-tack-top-right {
-  top: 1rem;
-  right: 1.15rem;
-}
-
-.thumb-tack-bottom-left {
-  bottom: 1rem;
-  left: 1.15rem;
-}
-
-.thumb-tack-bottom-right {
-  right: 1.15rem;
-  bottom: 1rem;
 }
 
 .feature-panel {

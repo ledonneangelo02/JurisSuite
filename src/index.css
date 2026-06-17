@@ -4,14 +4,10 @@
 @font-face {
   font-family: 'Century-Schoolbook';
   src: url('/src/assets/fonts/centuryschoolbook.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 @font-face {
   font-family: 'Michaela-Grace';
   src: url('/src/assets/fonts/MichaelaGrace.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @keyframes fadeInUp {
@@ -84,6 +80,69 @@
   --button-highlight-submit: rgba(255, 189, 218, 0.62);
   --button-highlight-pricing: rgba(205, 184, 255, 0.56);
   --button-focus-ring: rgba(248, 214, 78, 0.42);
+}
+
+/* ─── Shared paper-hero background (ruled notebook lines) ─── */
+:root {
+  --paper-hero-background:
+    linear-gradient(
+      to right,
+      transparent 73px,
+      rgba(52, 104, 235, 0.42) 73px,
+      rgba(52, 104, 235, 0.42) 75px,
+      transparent 75px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 8px,
+      transparent 32px,
+      rgba(210, 47, 47, 0.22) 32px,
+      rgba(234, 54, 54, 0.22) 33px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 253, 247, 0.92)),
+    #fffdf7;
+}
+
+/* ─── Shared thumb-tack decorative element ─── */
+.thumb-tack {
+  position: absolute;
+  z-index: 3;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.92), transparent 0.28rem),
+    radial-gradient(circle at 52% 58%, #d7dce7 0 0.22rem, transparent 0.24rem),
+    linear-gradient(145deg, #f6f8fb, #8f9aae);
+  border: 1px solid rgba(62, 72, 91, 0.34);
+  box-shadow:
+    0 0.45rem 0.85rem rgba(20, 33, 61, 0.22),
+    inset 0 0.12rem 0.18rem rgba(255, 255, 255, 0.82),
+    inset 0 -0.18rem 0.28rem rgba(62, 72, 91, 0.28);
+}
+
+.thumb-tack::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.42rem;
+  width: 0.18rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #69748a, #2f394d);
+  transform: translateX(-50%);
+  box-shadow: 0 0.2rem 0.3rem rgba(20, 33, 61, 0.2);
+}
+
+.thumb-tack-top-left     { top: 1rem;    left: 1.15rem;  }
+.thumb-tack-top-right    { top: 1rem;    right: 1.15rem; }
+.thumb-tack-bottom-left  { bottom: 1rem; left: 1.15rem;  }
+.thumb-tack-bottom-right { bottom: 1rem; right: 1.15rem; }
+
+.form-error {
+  color: #b42318;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 html, body, #root {
